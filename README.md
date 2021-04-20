@@ -1,16 +1,16 @@
-## OpenSea Creatures - Starter ERC721, ERC1155, and factory contracts
+## OpenSea NFT - ERC721, ERC1155
 
-What's included:
+What's in here:
 
-### Sample ERC721/ERC1155 Contracts
+### ERC721/ERC1155 Contracts
 
-This includes a very simple sample ERC721 / ERC1155 for the purposes of demonstrating integration with the [OpenSea](https://opensea.io) marketplace. We include a script for minting the items.
+This includes ERC721 / ERC1155 for the integration with the [OpenSea](https://opensea.io) marketplace. A script for minting the items is included.
 
 Additionally, this contract whitelists the proxy accounts of OpenSea users so that they are automatically able to trade the ERC721 item on OpenSea (without having to pay gas for an additional approval). On OpenSea, each user has a "proxy" account that they control, and is ultimately called by the exchange contracts to trade their items. (Note that this addition does not mean that OpenSea itself has access to the items, simply that the users can list them more easily if they wish to do so)
 
 ### Factory Contracts
 
-In addition to these template 721/1155 contracts, we provide sample factory contracts for running gas-free presales of items that haven't been minted yet. See https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial for more info.
+In addition to these template 721/1155 contracts, there are factory contracts for running gas-free presales of items that haven't been minted yet. See https://docs.opensea.io/docs/opensea-initial-item-sale-tutorial for more info.
 
 ## Requirements
 
@@ -23,6 +23,10 @@ Either make sure you're running a version of node compliant with the `engines` r
 Run
 
 ```bash
+nvm install 12.18.4
+nvm use 12.18.4
+npm install -g yarn --save
+yarn set version 1.22.4
 yarn
 ```
 
@@ -43,7 +47,7 @@ sudo npm explore npm -g -- npm install node-gyp@latest # Update node-gyp
 2. Using your API key and the mnemonic for your Metamask wallet (make sure you're using a Metamask seed phrase that you're comfortable using for testing purposes), run:
 
 ```
-export ALCHEMY_KEY="<your_alchemy_project_id>"
+export INFURA_KEY="<your_alchemy_project_id>"
 export MNEMONIC="<metmask_mnemonic>"
 DEPLOY_CREATURES_SALE=1 yarn truffle deploy --network rinkeby
 ```
